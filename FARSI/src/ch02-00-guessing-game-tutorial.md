@@ -46,7 +46,6 @@ edition = "2021"
 همانطور که در فصل ۱ دیدیم، `cargo new` یک برنامه «سلام دنیا» برای
 شما می‌سازد. کد فایل *src/main.rs* را بررسی کنید:
 ```rust
-// #c5f015
 fn main() {
     println!("Hello, world!");
 }
@@ -73,15 +72,23 @@ Hello, world!
 اولین قسمت برنامه این بازی، از کاربر ورودی می‌خواهد، آنرا پردازش می‌کند
 و چک می‌کند که ورودی به فرم مد نظر است. برای شروع اجازه می‌دهیم که بازیکن
 یک حدس وارد کند. کد ۲٫۱ را در *src/main.rs* وارد کنید.
+```rust
+use std::io;
 
-<span class="filename">فایل: src/main.rs</span>
+fn main() {
+    println!("Guess the number!");
 
-```rust,ignore
-{{#rustdoc_include ../listings/ch02-guessing-game-tutorial/listing-02-01/src/main.rs:all}}
+    println!("Please input your guess.");
+
+    let mut guess = String::new();
+
+    io::stdin()
+        .read_line(&mut guess)
+        .expect("Failed to read line");
+
+    println!("You guessed: {guess}");
+}
 ```
-
-<span class="caption">کد ۲٫۱: حدسی از کاربر گرفته و آن را نمایش می‌دهد.</span>
-
 این کد اطلاعات زیادی در بر دارد، پس خط به خط آنرا بررسی می‌کنیم.
 برای گرفتن ورودی کاربر و چاپ آن در خروجی، باید کتابخانه `io` یا input/output (ورودی/خروجی)
 را به برنامه بیاوریم.
