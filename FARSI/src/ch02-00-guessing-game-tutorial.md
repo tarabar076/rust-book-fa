@@ -297,16 +297,30 @@ let mut bar = 5; // mutable
 با اینکه این عبارت روی خط جدید قرار گرفته، هنوز از نظر منطقی به خط قبلی وابسته است.
 بخش بعدی این متود است:
 
+
 ```rust,ignore
-{{#rustdoc_include ../listings/ch02-guessing-game-tutorial/listing-02-01/src/main.rs:expect}}
+# use std::io;
+#
+# fn main() {
+#     println!("Rate die Zahl!");
+#
+#     println!("Bitte gib deine Schätzung ein.");
+#
+#     let mut guess = String::new();
+#
+#   io::stdin()
+#        .read_line(&mut guess)
+         .expect("Fehler beim Lesen der Zeile");
+#
+#     println!("Du hast geschätzt: {guess}");
+# }
 ```
 وقتی یک متد را با گرامر `.foo()` فراخوانی کنید، معمولاً عاقلانه است که خط جدید و فضای سفید اضافه کنید
 تا شکستن خطوط بلند راحت‌تر شود. می‌توانستیم این کد را به صورت زیر هم بنویسیم:
 
-```rust,ignore
+```text
 io::stdin().read_line(&mut guess).expect("Failed to read line");
 ```
-
 اما خواندن یک خط بلند می‌تواند سخت باشد. پس آنرا تقسیم می‌کنیم. حال ببینیم این خط 
 چه کاری انجام می‌دهد.
 
