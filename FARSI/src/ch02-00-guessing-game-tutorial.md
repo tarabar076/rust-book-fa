@@ -45,17 +45,20 @@ edition = "2021"
 
 همانطور که در فصل ۱ دیدیم، `cargo new` یک برنامه «سلام دنیا» برای
 شما می‌سازد. کد فایل *src/main.rs* را بررسی کنید:
-
-<span class="filename">فایل: src/main.rs</span>
-
 ```rust
-{{#rustdoc_include ../listings/ch02-guessing-game-tutorial/no-listing-01-cargo-new/src/main.rs}}
+fn main() {
+    println!("Hello, world!");
+}
 ```
 
 حال برنامه «سلام دنیا» را با استفاده از دستور `cargo run` کامپایل کرده و آنرا اجرا می‌کنیم.
 
-```text
-{{#include ../listings/ch02-guessing-game-tutorial/no-listing-01-cargo-new/output.txt}}
+```rust
+$ cargo run
+   Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
+    Finished dev [unoptimized + debuginfo] target(s) in 1.50s
+     Running `target/debug/guessing_game`
+Hello, world!
 ```
 
 دستور `run` وقتی نیاز به اجرای مداوم پروژه داشته باشید، بسیار کارآمد است.
