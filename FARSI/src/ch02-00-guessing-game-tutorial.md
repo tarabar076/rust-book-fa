@@ -478,7 +478,7 @@ rand = "0.8.3"
 . بخش *[dependencies]* جایی‌ست که شما در آن اعلام می‌کنید که برنامه‌ی شما به چه Crateهای خارجی‌ای وابسته‌ست و ورژن آن‌ها چیست.
 در اینجا، ما crate مربوط به `rand` را با مختص‌کننده‌ی نسخه‌‌ی سمانتیک `0.5.5` نمایش خواهیم داد.
 مدیریت بسته‌ی Cargo دسته‌بندی کننده‌ی سمانتیک  [Semantic
-Versioning]<!-- ignore --> (هم نامیده می‌شود *SemVer*) را تشخیص خواهد داد. عدد `0.8.3` کوتاه‌شده‌ی عبارت `^0.8.3` و که یعنی تمام نسخه‌های بعد از `0.8.3` و پیش از `0.9.0`می‌باشد.
+Versioning]<!-- ignore --> (هم نامیده می‌شود *SemVer*) را تشخیص خواهد داد. عدد `0.8.3` کوتاه‌شده‌ی عبارت `^0.8.3` است و تمام نسخه‌های بعد از `0.8.3` و پیش از `0.9.0`شامل می‌شود.
 
 
  کارگو تمام APIهای غیر خصوصی سازگار با ورژن `0.0.8` ا در نظر میگیرد. 
@@ -511,8 +511,8 @@ $ cargo build
 <span class="caption">Listing 2-2: The output from running `cargo build` after
 adding the rand crate as a dependency</span>
 
-You may see different version numbers (but they will all be compatible with
-the code, thanks to SemVer!), and the lines may be in a different order.
+البته شما ممکن است شمارگان نسخه‌های دیگر و یا خطوط متفاوت با آن‌چه در بالا آمده را به ترتیبی متفاوت مشاهده کنید(تمام آن‌ها به علت وجود SimVer با کدهای شما سازگار است.) 
+
 
 Now that we have an external dependency, Cargo fetches the latest versions of
 everything from the *registry*, which is a copy of data from
