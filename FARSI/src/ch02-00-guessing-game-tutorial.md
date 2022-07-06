@@ -474,15 +474,12 @@ rand = "0.8.3"
 {{#include ../listings/ch02-guessing-game-tutorial/listing-02-02/Cargo.toml:9:}}
 ```
 
-در فایل * Cargo.toml*هر چیزی که از یک سربرگ پیروی می‌کند به یک بخش تعلق دارد و این بخش تا شروع بخش بعدی امتداد میابد.
-. بخش *[dependencies]*جایی‌ست که شما به اعلام می‌کنید که برنامه‌ی شما به چه Crateهای خارجی وابسته‌ست و ورژن آن‌ها چیست.
-I
-در این مورد خاص، ما crate مربوط به `rand` را مختص‌کننده‌ی نسخه‌‌ی سمانتیک نمایش خواهیم داد.
-مدیریت بسته‌ی Cargo دسته‌بندی کننده‌ی سمانتیک را تشخیص خواهد داد. The number `0.5.5` is actually shorthand
-for `^0.5.5`, which means “any version that has a public API compatible with
-version 0.5.5.”
+در فایل * Cargo.toml* هر چیزی که در پی یک سربرگ قرار می‌گیرد به یک بخش تعلق دارد و این بخش تا شروع بخش بعدی امتداد میابد.
+. بخش *[dependencies]* جایی‌ست که شما در آن اعلام می‌کنید که برنامه‌ی شما به چه Crateهای خارجی‌ای وابسته‌ست و ورژن آن‌ها چیست.
+در اینجا، ما crate مربوط به `rand` را با مختص‌کننده‌ی نسخه‌‌ی سمانتیک `0.5.5` نمایش خواهیم داد.
+مدیریت بسته‌ی Cargo دسته‌بندی کننده‌ی سمانتیک  [Semantic
+Versioning][semver]<!-- ignore --> (هم نامیده می‌شود *SemVer*) را تشخیص خواهد داد. عدد `0.8.3` کوتاه‌شده‌ی عبارت `^0.8.3` و که یعنی تمام نسخه‌های بعد از `0.8.3` و پیش از `0.9.0`.
 
-[semver]: http://semver.org
 
 Now, without changing any of the code, let’s build the project, as shown in
 Listing 2-2.
