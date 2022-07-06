@@ -358,8 +358,20 @@ io::stdin().read_line(&mut guess).expect("Failed to read line");
 
 اگر `expect` را صدا نزنید اما، با اینکه برنامه کامپایل می‌شود، حین آن خطایی نمایش داده می‌شود:
 
-```text
-{{#include ../listings/ch02-guessing-game-tutorial/no-listing-02-without-expect/output.txt}}
+```console
+$ cargo build
+   Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
+warning: unused `Result` that must be used
+  --> src/main.rs:10:5
+   |
+10 |     io::stdin().read_line(&mut guess);
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_must_use)]` on by default
+   = note: this `Result` may be an `Err` variant, which should be handled
+
+warning: `guessing_game` (bin "guessing_game") generated 1 warning
+    Finished dev [unoptimized + debuginfo] target(s) in 0.59s
 ```
 
 کامپایلر Rust هشدار می‌دهد که از مقدار `Result` برگردانده شده از `read_line` هیچ استفاده‌ای نکرده‌اید 
@@ -375,7 +387,21 @@ io::stdin().read_line(&mut guess).expect("Failed to read line");
 
 
 ```rust,ignore
-{{#rustdoc_include ../listings/ch02-guessing-game-tutorial/listing-02-01/src/main.rs:print_guess}}
+#use std::io;
+
+#fn main() {
+#    println!("Guess the number!");
+
+#   println!("Please input your guess.");
+
+#    let mut guess = String::new();
+
+#    io::stdin()
+#        .read_line(&mut guess)
+#        .expect("Failed to read line");
+
+    println!("You guessed: {guess}");
+#}
 ```
 
 این خط رشته‌ای که ورودی کاربر در آن ذخیره شد را چاپ می‌کند. به کاری که مجموع کارکترهای ‌`{}` انجام می‌دهند جانشانی می‌گوییم: 
