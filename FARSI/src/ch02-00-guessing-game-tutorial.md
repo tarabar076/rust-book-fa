@@ -95,7 +95,21 @@ fn main() {
 کتابخانه `io` در کتابخانه استاندارد (که به آن `std` گفته می‌شود) موجود است.
 
 ```rust,ignore
-{{#rustdoc_include ../listings/ch02-guessing-game-tutorial/listing-02-01/src/main.rs:io}}
+use std::io;
+
+fn main() {
+    println!("Guess the number!");
+
+    println!("Please input your guess.");
+
+    let mut guess = String::new();
+
+    io::stdin()
+        .read_line(&mut guess)
+        .expect("Failed to read line");
+
+    println!("You guessed: {guess}");
+}
 ```
 
 به طور پیش‌فرض، Rust تنها چند نوع داده محدود به اسکوپ هر برنامه در [ *مقدمه*][prelude]<!-- ignore --> آن می‌آورد.
