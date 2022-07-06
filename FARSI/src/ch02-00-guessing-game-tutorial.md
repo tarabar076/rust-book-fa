@@ -27,12 +27,18 @@ $ cd guessing_game
 تغییر می‌دهد.
 
 به فایل *Cargo.toml* ساخته شده توجه کنید:
-
-<span class="filename">فایل: Cargo.toml</span>
-
 ```toml
-{{#include ../listings/ch02-guessing-game-tutorial/no-listing-01-cargo-new/Cargo.toml}}
+[package]
+name = "guessing_game"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
 ```
+
+
 
 اگر اطلاعات نویسنده که کارگو از محیط شما گرفته است صحیح نیست
 آن‌ها را اصلاح کنید و فایل را ذخیره کنید.
