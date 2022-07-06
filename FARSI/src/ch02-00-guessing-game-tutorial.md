@@ -95,7 +95,7 @@ fn main() {
 کتابخانه `io` در کتابخانه استاندارد (که به آن `std` گفته می‌شود) موجود است.
 
 ```rust,ignore
-use std::io;
+--> use std::io;
 
 fn main() {
     println!("Guess the number!");
@@ -115,23 +115,63 @@ fn main() {
 به طور پیش‌فرض، Rust تنها چند نوع داده محدود به اسکوپ هر برنامه در [ *مقدمه*][prelude]<!-- ignore --> آن می‌آورد.
 اگر نوع داده موردنیاز شما در مقدمه برنامه نیست، باید آن نوع داده را صریح با عبارت `use` به اسکوپ برنامه وارد کنید.
 استفاده از کتابخانه `std::io` چند قابلیت جدید به برنامه شما اضافه می‌کند، که یکی از آن‌ها توانایی دریافت ورودی کاربر است.
-
-[prelude]: ../std/prelude/index.html
-
+```rust,ignore
+# use std::io;
+#
+fn main() {
+#     println!("Rate die Zahl!");
+#
+#     println!("Bitte gib deine Schätzung ein.");
+#
+#     let mut guess = String::new();
+#
+#     io::stdin()
+#         .read_line(&mut guess)
+#         .expect("Fehler beim Lesen der Zeile");
+#
+#     println!("Du hast geschätzt: {guess}");
+# }
+```
 همانطور که در فصل ۱ دیدیم، تابع `main` نقطه ورود به برنامه است:
 
 ```rust,ignore
-{{#rustdoc_include ../listings/ch02-guessing-game-tutorial/listing-02-01/src/main.rs:main}}
+# use std::io;
+#
+fn main() {
+#     println!("Rate die Zahl!");
+#
+#     println!("Bitte gib deine Schätzung ein.");
+#
+#     let mut guess = String::new();
+#
+#     io::stdin()
+#         .read_line(&mut guess)
+#         .expect("Fehler beim Lesen der Zeile");
+#
+#     println!("Du hast geschätzt: {guess}");
+# }
 ```
-
 گرامر `fn` برای تعریف توابع استفاده می‌شود، پرانتز‌ها `()` مشخص می‌کنند که هیچ
 پارامتری وجود ندارد و براکت‌ها `}` بدنه تابع را مشخص می‌کنند.
 
 همانطور که در فصل ۱ هم یادگرفتید، `println!` یک ماکرو است که
 رشته‌ای را در صفحه چاپ می‌کند:
-
 ```rust,ignore
-{{#rustdoc_include ../listings/ch02-guessing-game-tutorial/listing-02-01/src/main.rs:print}}
+# use std::io;
+#
+# fn main() {
+    println!("Rate die Zahl!");
+
+    println!("Bitte gib deine Schätzung ein.");
+#
+#     let mut guess = String::new();
+#
+#     io::stdin()
+#         .read_line(&mut guess)
+#         .expect("Fehler beim Lesen der Zeile");
+#
+#     println!("Du hast geschätzt: {guess}");
+# }
 ```
 
 این کد پیامی را چاپ می‌کند که نشان می‌دهد بازی چگونه انجام می‌شود و
@@ -143,7 +183,21 @@ fn main() {
 سپس، برای ذخیره‌سازی ورودی کاربر محلی می‌سازیم:
 
 ```rust,ignore
-{{#rustdoc_include ../listings/ch02-guessing-game-tutorial/listing-02-01/src/main.rs:string}}
+# use std::io;
+#
+# fn main() {
+#     println!("Rate die Zahl!");
+#
+#     println!("Bitte gib deine Schätzung ein.");
+#
+    let mut guess = String::new();
+#
+#     io::stdin()
+#         .read_line(&mut guess)
+#         .expect("Fehler beim Lesen der Zeile");
+#
+#     println!("Du hast geschätzt: {guess}");
+# }
 ```
 
 حالا برنامه جالب می‌شود! اتفاقات زیادی در این خط کوتاه می‌افتند. به عبارت `let`
