@@ -474,10 +474,9 @@ rand = "0.8.3"
 {{#include ../listings/ch02-guessing-game-tutorial/listing-02-02/Cargo.toml:9:}}
 ```
 
-In the *Cargo.toml* file, everything that follows a header is part of a section
-that continues until another section starts. The `[dependencies]` section is
-where you tell Cargo which external crates your project depends on and which
-versions of those crates you require. In this case, we’ll specify the `rand`
+در فایل * Cargo.toml*هر چیزی که از یک سربرگ پیروی می‌کند به یک بخش تعلق دارد و این بخش تا شروع بخش بعدی امتداد میابد.
+that continues until another section starts. بخش *[dependencies]*جایی‌ست که شما به اعلام می‌کنید که برنامه‌ی شما به چه کریت‌های خارجی وابسته‌ست و ورژن آن‌ها چیست.
+In this case, we’ll specify the `rand`
 crate with the semantic version specifier `0.5.5`. Cargo understands [Semantic
 Versioning][semver]<!-- ignore --> (sometimes called *SemVer*), which is a
 standard for writing version numbers. The number `0.5.5` is actually shorthand
