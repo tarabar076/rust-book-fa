@@ -475,11 +475,10 @@ rand = "0.8.3"
 ```
 
 در فایل * Cargo.toml*هر چیزی که از یک سربرگ پیروی می‌کند به یک بخش تعلق دارد و این بخش تا شروع بخش بعدی امتداد میابد.
-that continues until another section starts. بخش *[dependencies]*جایی‌ست که شما به اعلام می‌کنید که برنامه‌ی شما به چه کریت‌های خارجی وابسته‌ست و ورژن آن‌ها چیست.
-In this case, we’ll specify the `rand`
-crate with the semantic version specifier `0.5.5`. Cargo understands [Semantic
-Versioning][semver]<!-- ignore --> (sometimes called *SemVer*), which is a
-standard for writing version numbers. The number `0.5.5` is actually shorthand
+. بخش *[dependencies]*جایی‌ست که شما به اعلام می‌کنید که برنامه‌ی شما به چه Crateهای خارجی وابسته‌ست و ورژن آن‌ها چیست.
+I
+در این مورد خاص، ما crate مربوط به `rand` را مختص‌کننده‌ی نسخه‌‌ی سمانتیک نمایش خواهیم داد.
+مدیریت بسته‌ی Cargo دسته‌بندی کننده‌ی سمانتیک را تشخیص خواهد داد. The number `0.5.5` is actually shorthand
 for `^0.5.5`, which means “any version that has a public API compatible with
 version 0.5.5.”
 
